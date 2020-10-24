@@ -1,0 +1,12 @@
+<h1>新規ユーザー登録</h1>
+<%= form_tag("/users/create") do %>
+  <p>IGN</p>
+  <input name="ign"><%#value="<%= @user.ign %>
+  <p>パスワード</p>
+  <input type="password" name="password"><%#value="<%= @user.password %>
+  <p>CLAN</p>
+  <input name="clan" ><%#value="<%= @user.clan %>
+  <p>役職</p>
+  <input name="roll" ><%#value="<%= @user.roll %>
+  <input type="submit" value="登録">
+<% end %>

@@ -1,0 +1,14 @@
+<h1>マイページ</h1>
+  <p>
+    <%= link_to("新規カレンダー","/calenders/new") %>
+  </p>
+  <p>
+    <%= link_to("カレンダーに参加する","/calenders/join_form") %>
+  </p>
+  <% @calenders_admitted.each do |calender_admitted| %>
+    <% calender=Calender.find_by(id: calender_admitted.calender_id) %>
+    <% calender_name=calender.name %>
+    <p>
+      <%= link_to("#{calender_name}","/calenders/calender/#{calender.id}") %>
+    </p>
+  <% end %>

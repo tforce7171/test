@@ -1,0 +1,8 @@
+<% dates = Schedule.where(user_id: session[:user_id]).pluck(:date) %>
+<% impossibles = Schedule.where(user_id: session[:user_id]).pluck(:impossible) %>
+<% impossibles.zip(dates) do |impossible,date| %>
+  <p>
+    <%= date %>日
+    <%= impossible %>
+  </p>
+<% end %>

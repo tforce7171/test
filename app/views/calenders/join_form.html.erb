@@ -1,0 +1,8 @@
+<h1>カレンダーに参加する</h1>
+  <%= form_tag("/calenders/join") do %>
+    <p>カレンダー名</p>
+    <input name="name">
+    <p>カレンダーID</p>
+    <input type="password" name="room_id">
+    <input type="submit" value="参加">
+  <% end %>

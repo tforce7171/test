@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <%= link_to("home","/") %>
+      </ul>
+      <ul>
+        <% if session[:user_id] %>
+          <li>
+            <%= link_to("logout","/logout",{method: :post}) %>
+          </li>
+          <li>
+            <%= @current_user.ign %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to("login","/login") %>
+          </li>
+          <li>
+            <%= link_to("新規登録","/users/new") %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
+    <%= yield %>
+  </body>
+</html>

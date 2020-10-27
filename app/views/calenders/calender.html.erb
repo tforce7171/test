@@ -8,8 +8,8 @@
       <p>
         <%= day %>
         <%= check_box "check", "#{day}" %>無理
-        <%= select_tag "hour", "#{day}", options_for_select(["18","19","20","21","22"]) %>時
-        <%= select_tag "min", "#{day}", options_for_select(["00","15","30","45"]) %>分
+        <%# select_tag "hour", "#{day}", options_for_select(["18","19","20","21","22"]) %>
+        <%# select_tag "min", "#{day}", options_for_select(["00","15","30","45"]) %>
       </p>
     <% end %>
     <input type="submit" value="投稿">
